@@ -1,0 +1,121 @@
+<!doctype html>
+ <!--
+* Purpose: This file contains html code to display the new run page with mdl codes and button linking
+* Team 164
+* Author: Alexander, Alvin, Chee Yee
+* Last Modified: 21 May 2017
+-->
+
+
+
+
+<html>
+    <head>
+        <title>Run Challenge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+        <link rel="stylesheet" href="css/runChallenge.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/runChallenge.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/runChallenge.png" />
+    </head>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title" id="headerBarTitle">New Run</span>
+            </div>
+          </header>
+          <main class="mdl-layout__content">
+              <!--   Main page content here:   -->
+			  
+			  <div id="map"></div>
+			  
+              
+    		<button onclick = "randomDestination()" id="randomDestination" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Random Dest</button>
+            <button onclick = "selectDestination()" id="selectDestination" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save Dest</button>
+            <button onclick = "beginRun()" id="beginRun" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Begin</button>
+            <button onclick = "saveRun()" id="saveRun" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save</button>
+			<button onclick = "iGiveUp()" id="iGiveUp" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">I Give Up.</button>
+			
+			
+				  <!-- Accent-colored raised button with ripple -->
+
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+          <a href="#accuracy-panel" class="mdl-tabs__tab">Accuracy</a>
+          <a href="#distanceFromStart-panel" class="mdl-tabs__tab">Start</a>
+		  <a href="#estimatedDistanceLeft-panel" class="mdl-tabs__tab">End</a>
+          <a href="#averageSpeed-panel" class="mdl-tabs__tab">Speed</a>
+		  <a href="#timer-panel" class="mdl-tabs__tab">Timer</a>
+          </div>
+           
+          <div class="mdl-tabs__panel" id="accuracy-panel">
+          <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--5-col"></div>
+          <div class="mdl-cell mdl-cell--7-col"><p class = "infoBox" id = "trackAccuracy">Accuracy:</p></div>  
+          </div>
+		  </div>
+			  
+		  <div class="mdl-tabs__panel" id="distanceFromStart-panel">
+          <div class="mdl-grid">   
+          <div class="mdl-cell mdl-cell--4-col"></div>
+          <div class="mdl-cell mdl-cell--5-col"><p class = "infoBox" id = "distanceFromStart">Distance From Start:</p></div>
+		  </div>
+		  </div>
+			  
+		  <div class="mdl-tabs__panel" id="estimatedDistanceLeft-panel">
+          <div class="mdl-grid">   
+          <div class="mdl-cell mdl-cell--3-col"></div>
+          <div class="mdl-cell mdl-cell--6-col"><p class = "infoBox" id = "distanceLeft">Distance Travelled:</p></div>
+		  </div>
+		  </div>
+			  
+		  <div class="mdl-tabs__panel" id="averageSpeed-panel">
+          <div class="mdl-grid">   
+          <div class="mdl-cell mdl-cell--2-col"></div>
+          <div class="mdl-cell mdl-cell--7-col"><p class = "infoBox" id = "averageSpeed">Speed:</p></div>
+		  </div>
+		  </div>
+			  
+		  <div class="mdl-tabs__panel" id="timer-panel">
+          <div class="mdl-grid">   
+          <div class="mdl-cell mdl-cell--2-col"></div>
+          <div class="mdl-cell mdl-cell--7-col"><p class = "infoBox" id = "timer">Timer:</p></div>
+		  </div>
+		  </div>
+			  
+		  <img id="myImg" src="https://pbs.twimg.com/profile_images/675002642196729857/A0OpcJpA.png" width="10" height="10">
+
+		  <!-- The Modal -->
+		  <div id="myModal" class="modal">
+  	      <span class="close">&times;</span>
+  	      <img class="modal-content" id="img01">
+	      <div id="caption"></div>
+		  </div>
+		  </main>
+			
+			
+          <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button class="mdl-snackbar__action" type="button"></button>
+          </div>
+         
+		
+
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/shared.js"></script>
+        <script src="js/newRunPage.js"></script>
+		<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR1XePG1b3aN6TUgvVLsaW8BzqTsaSAGU&callback=initMap">
+    </script>
+    </body>
+</html>

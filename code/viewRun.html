@@ -1,0 +1,105 @@
+<!doctype html>
+ <!--
+* Purpose: Purpose: This file contains html code to display the view run page with mdl codes and button linking
+* Team 164
+* Author: Alexander, Alvin, Chee Yee
+* Last Modified: 21 May 2017
+-->
+<html>
+    <head>
+        <title>Run Challenge</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-green.min.css" />
+        <link rel="stylesheet" href="css/runChallenge.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/runChallenge.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/runChallenge.png" />
+		
+    </head>
+
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title" id="headerBarTitle">View Run</span>
+            </div>
+          </header>
+
+          <main class="mdl-layout__content">
+            <!--   Main page content here:   -->
+			  <div id = "map"></div>
+			
+			
+          <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+          <a href="#about-panel" class="mdl-tabs__tab">Details</a>
+          <a href="#reattempt-panel" class="mdl-tabs__tab">Reattempt</a>
+          <a href="#deleteRun-panel" class="mdl-tabs__tab">Delete Run</a>
+		  <a href="#treasure-panel" class="mdl-tabs__tab">Treasure</a>
+          </div>
+           
+          <div class="mdl-tabs__panel" id="about-panel">
+          <div class="mdl-grid">   
+          <div class="mdl-cell mdl-cell--5-col"></div>
+          <div class="mdl-cell mdl-cell--6-col"><p class = "infoBox" id = "distanceTravelledViewRun">Distance Travelled:</p></div>
+          <div class="mdl-cell mdl-cell--7-col"><p class = "infoBox" id = "timeTakenViewRun">Time Taken:</p></div>
+          <div class="mdl-cell mdl-cell--8-col"><p class = "infoBox" id = "averageSpeedViewRun">Average Speed:</p></div>
+		  <div class="mdl-cell mdl-cell--9-col"><p class = "infoBox" id = "caloriesBurnt">Calories Burnt:</p></div>
+          </div>
+          </div>  
+      
+          <div class="mdl-tabs__panel" id="reattempt-panel">
+          <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col"></div>
+          <div class="mdl-cell mdl-cell--4-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="reattemptRun()">Reattempt Run</button></div>
+          </div>
+          </div>
+			  
+			
+              
+          <div class="mdl-tabs__panel" id="deleteRun-panel">
+          
+          <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--5-col"></div>
+          <div class="mdl-cell mdl-cell--5-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" onclick="deleteRun()">Delete Run</button></div>
+          </div>
+          </div>
+			  
+			  
+		  <div class="mdl-tabs__panel" id="treasure-panel">
+          <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--5-col"></div>
+          <div class="mdl-cell mdl-cell--5-col"><p class = "infoBox" id = "treasureCounter">Treasure Collected:</p></div>
+          </div>
+          </div>
+			  
+			  
+          </div>
+          <br>
+          </main>
+          <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+          </div>
+        </div>
+
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/shared.js"></script>
+        <script src="js/viewRunPage.js"></script>
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR1XePG1b3aN6TUgvVLsaW8BzqTsaSAGU&callback=initMap&libraries=geometry">
+    </script>
+    
+		
+		
+
+        
+    </body>
+</html>
